@@ -31,7 +31,9 @@
         <item>G#/A♭</item>
     </string-array>
 
-
-
+    <string-array name="Chord_flavor">
+        <item>Normal</item>
+        <item>Maj7</item>
+    </string-array>
 
 </resources>
