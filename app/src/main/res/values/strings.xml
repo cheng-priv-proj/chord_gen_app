@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Guitar Chord Progression (project)</string>
-    <string name="spinner_description">Spinner for ... i donno</string>
+    <string name="spinner_description">Spinner for … i dunno</string>
+    <string name="sequence">Sequence</string>
+    <string name="number_of_chords">Number of Chords</string>
+    <string name="generate_chord_progression">Generate chord progression</string>
+    <string name="chord_progression">Chord Progression</string>
+    <string name="generation_algorithm">Generation algorithm</string>
+    <string name="key">Key</string>
+    <string name="chord_flavor">Chord Flavor</string>
 
     <string-array name="chord_amounts_array">
         <item>3</item>
