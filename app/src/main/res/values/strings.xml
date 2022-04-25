@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Guitar Chord Progression (project)</string>
+    <string name="spinner_description">Spinner for ... i donno</string>
+
+    <string-array name="chord_amounts_array">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+
+    <string-array name="progression_algorithm">
+        <item>3rd/5th/step root movements</item>
+        <item>Random</item>
+    </string-array>
+
+    <string-array name="key_array">
+        <item>A</item>
+        <item>A#/b♭</item>
+        <item>B</item>
+        <item>C</item>
+        <item>C#/D♭</item>
+        <item>D</item>
+        <item>D#/E♭</item>
+        <item>E</item>
+        <item>F</item>
+        <item>F#/G♭</item>
+        <item>G</item>
+        <item>G#/A♭</item>
+    </string-array>
+
+
+
+
 </resources>
