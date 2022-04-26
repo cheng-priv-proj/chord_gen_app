@@ -2,6 +2,7 @@ package com.example.guitarchordprogressionproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
 import com.example.guitarchordprogressionproject.databinding.ActivityMainBinding
@@ -76,7 +77,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val spinner4: Spinner = binding.spinner4
         spinner4.onItemSelectedListener = this
 
-        binding.buttonRoll.setOnClickListener { generateChordProgression() }
+
+        val animationId = binding.animationView
+        animationId.visibility = View.GONE
+
+        binding.buttonRoll.setOnClickListener {
+            animationId.visibility = View.VISIBLE
+            timer.start()
+        }
 
     }
 
@@ -149,12 +157,26 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         val chordProgressionString = printChordsInKey(chordList, globalKeySelection, globalChordFlavor)
 
-
+        // Updating the textView
         val resultTextView: TextView = findViewById(R.id.textView)
         val resultTextView2: TextView = findViewById(R.id.textView6)
         resultTextView.text = chordProgressionString
         resultTextView2.text = chordProgressionSequence
 
+    }
+
+    // A timer for the timer animation
+    private val timer = object: CountDownTimer(750, 1000) {
+        // We don't need anything done while the ticker is counting down.
+        override fun onTick(p0: Long) {
+            {}
+        }
+
+        override fun onFinish() {
+            val animationId = binding.animationView
+            animationId.visibility = View.GONE
+            generateChordProgression()
+        }
     }
 
 
@@ -163,7 +185,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val result = parent.getItemAtPosition(pos).toString()
 
         // Gets the id for the spinner that has been selected
-
         when (parent.id) {
             R.id.spinner -> globalChordAmount = result
             R.id.spinner2 -> globalGenSelection = result
@@ -210,7 +231,7 @@ fun printChordsInKey(chordList: MutableList<Int>, key: String, flavor: String): 
         else {
             when (item) {
                 1, 4 -> "$returnString $keyIndex" +"Maj7"
-                5 -> "$returnString $keyIndex" + "Dom7"
+                5 -> "$returnString $keyIndex" + "7"
                 2, 3, 6 -> "$returnString $keyIndex" + "m7"
                 else -> "$returnString $keyIndex" + "dim7"
             }
@@ -218,6 +239,7 @@ fun printChordsInKey(chordList: MutableList<Int>, key: String, flavor: String): 
     }
     return returnString
 }
+
 
 
 class ChordClass {
