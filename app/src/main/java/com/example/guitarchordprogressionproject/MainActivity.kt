@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.guitarchordprogressionproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         // Spinner for the amount of chords in the chord progression
@@ -25,10 +27,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         ArrayAdapter.createFromResource(
             this,
             R.array.chord_amounts_array,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_layout
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_layout)
             // Apply the adapter to the spinner
             spinId.adapter = adapter
         }
@@ -43,9 +45,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         ArrayAdapter.createFromResource(
             this,
             R.array.progression_algorithm,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_layout
         ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_layout)
             spinId2.adapter = adapter
         }
         val spinner2: Spinner = binding.spinner2
@@ -56,9 +58,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         ArrayAdapter.createFromResource(
             this,
             R.array.key_array,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_layout
         ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_layout)
             spinId3.adapter = adapter
         }
         val spinner3: Spinner = binding.spinner3
@@ -69,9 +71,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         ArrayAdapter.createFromResource(
             this,
             R.array.Chord_flavor,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_layout
         ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_layout)
             spinId4.adapter = adapter
         }
         val spinner4: Spinner = binding.spinner4
@@ -166,7 +168,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     // A timer for the timer animation
-    private val timer = object: CountDownTimer(750, 1000) {
+    private val timer = object: CountDownTimer(3000, 1000) {
         // We don't need anything done while the ticker is counting down.
         override fun onTick(p0: Long) {
             {}
