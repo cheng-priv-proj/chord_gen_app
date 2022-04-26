@@ -11,7 +11,7 @@ In the future, a more advanced chord generation algorithm would include rules th
 See link below for diagram that shows how the program creates a basic chord progression. 
 
 
-<img src="md_related_files/Chord_diagram.png" width="128"/>
+<img src="md_related_files/Chord_diagram.png" width="400"/>
 
 
 
