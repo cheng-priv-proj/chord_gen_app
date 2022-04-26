@@ -9,7 +9,10 @@ However, there are many more possibilites to the rules that influence the genera
 In the future, a more advanced chord generation algorithm would include rules that allow for out of key chord substitutions rather than the chords in one key.
 
 See link below for diagram that shows how the program creates a basic chord progression. 
-![Chord diagram](md_related_files/Chord_diagram.png)
+
+
+<img src="md_related_files/Chord_diagram.png" width="128"/>
+
 
 
 https://www.musicnotes.com/now/musictheory/chord-progression-formulas/
