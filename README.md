@@ -1,4 +1,4 @@
-# Guitar_Chord_Progression_Generator_Android_Application
+
 Android application that generates a chord progression. Created from a personal desire to practice chord progressions on the guitar.
 
 
